@@ -1,0 +1,20 @@
+{
+  "origen": "libro_02",
+  "slug": "cap07",
+  "redes": [
+    "facebook",
+    "instagram",
+    "x"
+  ],
+  "archivos": [
+    "card_fb_x_1080.png",
+    "ig_carrusel_01.png",
+    "ig_carrusel_02.png",
+    "ig_carrusel_03.png",
+    "ig_carrusel_04.png",
+    "ig_carrusel_05.png",
+    "ig_carrusel_06.png",
+    "ig_carrusel_07.png",
+    "ig_carrusel_08.png"
+  ]
+}

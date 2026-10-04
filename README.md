@@ -26,6 +26,13 @@ marca/                                  portadas y avatar de los perfiles
 
 1. **Solo contenido aprobado y listo para salir.** Lo que entra aquí es público desde el push.
 2. **Nada se borra antes de publicarse**: Buffer descarga el archivo a la hora programada.
-3. **Retención:** lo publicado hace más de 30 días ya no se necesita. Cuando el repo se acerque
-   a ~800 MB se limpia (mes a mes) o se rota por año; siempre con aprobación del autor.
+3. **Retención y purga** (la aplica `python agent.py --assets-estado | --assets-purgar --confirmar`):
+   - **Purgable** solo si pasaron **más de 30 días desde la fecha objetivo** de la carpeta **y** todos sus
+     posts en Buffer ya no necesitan el archivo: publicados (`sent`), Reels en modo recordatorio ya
+     avisados al teléfono (`notified` / `markedAsPublished`), o borrados de Buffer.
+   - **Se retiene** lo que está dentro del plazo o tiene posts programados, en borrador o en aprobación.
+   - **A revisar** (nunca se purga sola): posts con error o carpetas sin registro de envío.
+   - La purga reescribe el historial en un solo commit (force push) para que el repo se achique;
+     siempre con aprobación explícita del autor y solo sobre este repo. Bitácora en el agente
+     (`data/assets_purgas.json`). Aviso automático al pasar de 800 MB.
 4. Sin Git LFS: las URLs de LFS no sirven el archivo directo.
